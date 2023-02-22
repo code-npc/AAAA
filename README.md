@@ -1,4 +1,3 @@
 # AAAA
-杂记
-全是用来练习的
-练习两年半
+    This is a note for doing pratice.
+    ......

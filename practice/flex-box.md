@@ -4,8 +4,8 @@
     2.响应式布局  
 ### 特点
     拉伸以填充额外的空间，收缩以适应更小的空间   
-### 样式
-    弹性容器样式：
+
+### 弹性容器样式：
     display: flex //将容器设置为弹性容器
     flex-direction: row / row-reverse / column / column-reverse  //设置按行或列布局 （flex-flow）
     flex-wrap: wrap / wrap-reverse //设置元素多的时候是否可以折行（flex-flow）
@@ -16,7 +16,7 @@
     align-content:flex-start / center / flex-end / stretch /space-between / space-around     
     //设置多行元素在容器中的整体对齐方式，注意，对单行元素无效 
 
-    弹性元素的样式：
+### 弹性元素的样式：
     flex-grow：0 1 2 3   //元素拉大的比例（flex） 默认为0表示不会被拉大 1表示等比放大
     flex-shrink: 0 1  //元素缩小的比例（flex）默认为1，表示弹性元素等比例压缩 0则表示不压缩
     flex-basis  //元素基础的大小（flex）  

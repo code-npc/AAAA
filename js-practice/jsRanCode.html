@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机生成验证码</title>
+    <style>
+        #code{
+            background-color: lightblue;
+            font-size: 30px;
+            width: 130px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="code"></div>
+    <button onclick="getCode()">获取验证码</button>
+    <script>
+        function getCode(){
+            var arr = ['r','K','w','u','o','P','0','4','6','2','7','8','5','3','1','I','j','A'];
+            var ranCode = "";
+                for(var i= 0;i<6;i++){
+                var ranPos;
+                ranPos = parseInt(Math.random()*(arr.length-1));//Math.floor()转为整数，parseInt也是一样的功能
+                ranCode += arr[ranPos];
+            }
+            document.getElementById("code").innerHTML = ranCode;
+        }
+        
+        // console.log(document.getElementById("code"));
+    </script>
+</body>
+</html>

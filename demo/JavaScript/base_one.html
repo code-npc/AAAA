@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    js改变html内容
+        1. onclick事件，鼠标单击后触发。
+        2. document.getElementById("id"); 通过id来获取一个dom元素。
+        3. elem.innerHTML = “”;改变元素的html部分
+     -->
+    <!-- <h2>JavaScript 能做什么</h2>
+
+    <p id="demo">JavaScript 能够改变 HTML 内容。</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>点击我！</button> -->
+
+<!-- 
+js改变html属性
+ -->
+
+<h2>JavaScript 能做什么？</h2>
+
+<p>JavaScript 能够改变 HTML 属性值。</p>
+
+<p>在本例中,JavaScript 改变了图像的 src 属性值。</p>
+
+<button onclick="document.getElementById('myImage').src='./img/0.webp'">开灯</button>
+
+<img id="myImage" src="./img/2.webp" style="text-align:center;">
+
+<button onclick="document.getElementById('myImage').src='./img/2.webp'">重置</button>
+
+<button onclick="document.getElementById('myImage').src='./img/4.webp'">关灯</button>
+
+
+<!-- 
+js改变css样式
+    elem.style.attrbute = '值'; 只能写一种样式，而且还要，去横线，改驼峰，ex：font-size => fontSize
+    elem.style.cssText=" *** : ** ; *** : ** ;...... "; 可以写一组样式代码
+ -->
+
+ <!-- <h2>JavaScript 能够做什么</h2>
+
+<p id="demo1">JavaScript 能够改变 HTML 元素的样式。</p>
+<p id="demo2">JavaScript 能够改变 HTML 元素的样式。</p>
+
+
+<button type="button" onclick="document.getElementById('demo1').style.fontSize='35px'">点</button>
+<button type="button" onclick="document.getElementById('demo2').style.cssText='font-size:35px; color:red;'">
+
+点击我！
+</button> -->
+
+
+<!-- <p id="aa" style="display:none;">隐藏</p>
+<button onclick="document.getElementById('aa').style.display='block'">点击我！</button> -->
+
+
+</body>
+</html>

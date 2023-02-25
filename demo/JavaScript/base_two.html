@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/* 
+    js代码的执行顺序
+分析下面的js代码，如果是按照顺序依次向下执行，会发现：showName(); myname; 都没有定义，按理来说是应该报错的
+但是，实际上输出的是 
+
+     函数showName被执行
+     undefined
+
+为什么呢？
+    浏览器在执行js代码时，先编译，在执行。而且存在  “变量提升”  现象。
+    变量提升：js在执行时会先将变量和函数声明提到前面（不是物理上的提前）, 然后才会按照循序执行，赋值；
+    所以例如：var a = 29;
+    这句在执行时，实际是被拆分为两部分
+        var a = undefined;   声明部分
+        a = 29;  赋值部分
+    在声明部分是会先赋一个默认值，undefined
+    所以在js中可以先写执行语句，在写声明语句
+
+    总结：
+    JavaScript代码执行过程中，需要先做变量提升，而之所以需要实现变量提升，是因为JavaScript代码在执行之前需要先编译。
+    在编译阶段，变量和函数会被存放到变量环境中，变量的默认值会被设置为undefined；在代码执行阶段，JavaScript引擎会从
+    变量环境中去查找自定义的变量和函数。
+    如果在编译阶段，存在两个相同的函数，那么最终存放在变量环境中的是最后定义的那个，这是因为后定义的会覆盖掉之前定义的。
+
+    */
+showName();
+console.log(myname);
+var myname = '李晨阳';
+function showName() {
+    console.log('函数showName被执行');
+}
+
+</script>
+</body>
+</html>

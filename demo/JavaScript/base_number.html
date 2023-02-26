@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a 标签如果没有href属性，不会显示超链接的默认样式 -->
+
+    <!-- 极大的数和极小的数在js中都可以用科学计数法表示，e5：表示小数点向右移动5位。e-5：表示小数点向左移动5位 -->
+
+    <!-- 浮点数的运算并不总是100%准确的。在js中0.2+0.1的答案就存在误差
+        解决方法：可以先全部乘10后在相加，最后除以10，就可以了。一些Math方法也可以，比如保留小数后几位等等。
+        
+        为什么会出现这种情况？？？
+
+        因为浮点数运算的精度问题。在计算机运行过程中，需要将数据转化成二进制，然后再进行计算。
+        js中的Number类型遵循IEEE754标准，在IEEE754标准的64位浮点数相加，因为浮点数自身小数位数的限制而截断的二进制在
+        转化为十进制，就变成0.30000000000000004，所以在计算时会产生误差。
+        小数转化为IEEE754的过程：先转化为二进制的形式，然后再用科学计数法表示，接着把通过科学计数法表示的二进制数用IEEE754标准表示。
+    -->
+
+        <!-- 
+            数字 + 字符串,结果会是字符串;字符串 + 数字,结果是字符串;   
+            ' + ' 它的含义在表达式中如果都是数字number类型的,就表示加法中的加号;如果表达式中含有字符串,含义就变成了拼接.
+            但是在除法 / ;减法 - ;乘法 * ;中如果表达式中含有字符串,js会尝试把字符串转换为数字; 
+         -->
+
+         <!-- 
+            isNaN(); 用来判断一个变量是不是数字,返回值为boolean类型;如果不是数字类型,返回true.
+            typeof NaN; 返回值为number,所以NaN的数据类型是number数字类型的.
+          -->
+
+          <!-- 
+            Infinity表示正无穷大, -Infinity表示负无穷大;
+            typeof Infinity; 结果为number; Infinity是数字类型的;
+           -->
+           
+           <!-- 
+            前缀为0x或0X的数字,会被解释为16进制.
+            toString()方法可以将数字转变为二进制,八进制,16进制;
+            number.toString(10);
+            number.toString(2);
+            number.toString(8);
+            number.toString(16);
+            -->
+
+            <!-- 
+                number.toExponential() 方法返回一个字符串，包含进行舍入的数字并使用指数表示法。 也就是科学计数法. 返回类型string
+             -->
+
+             <!-- 
+                number.toFixed(*); 将数字 四舍五入 为指定的位数 ,也是一个字符串
+              -->   
+
+              <!-- 
+                number.toPrecision(*); 返回一个字符串,其中包含一个指定长度写的数字.
+               -->
+
+               <!-- 
+                Number();将变量转变为数字 ,返回类型为number,其中NaN也是number类型
+                -->
+
+                <!-- 
+                    parseInt(); 将字符串转换为数字.不仅如此,还只保留整数位.
+                    parseFloat(); 将字符串转换为数字
+                 -->
+
+                 <!-- 
+                    Number.MAX_VALUE; 返回js中可能的最大值
+                    Number.MIN_VALUE; 返回js中可能的最小值
+                    Number.POSITIVE_INFINITY; 表示正无穷大
+                    Number.NEGATIVE_INFINITY; 表示负无穷大
+
+                  -->
+    <!-- <a>3</a> -->
+    <!-- <p id="demo"></p> -->
+
+    <!-- <p>浮点的算数并不总是 100% 精准：</p>
+
+    <p id="demo1"></p>
+
+    <p>但是乘法和除法是有用的：</p>
+
+    <p id="demo2"></p> -->
+
+    <p id="demo"></p>
+    <script>
+        // var x = 123e5;
+        // var y = 123e-5;
+        // document.getElementById("demo").innerHTML=(x + "<br />"+y);
+
+        // var x = 0.2 + 0.1;
+        // document.getElementById("demo1").innerHTML = "0.2 + 0.1 = " + x;
+        // var y = (0.2*10 + 0.1*10) / 10;
+        // document.getElementById("demo2").innerHTML = "0.2 + 0.1 = " + y;
+
+        // var x = "100";
+        // var y = "10";
+        // var z = x / y;   
+        // document.getElementById("demo").innerHTML = z;
+
+        // var myNumber = 2; 
+        // var txt = "";
+        // while (myNumber != Infinity) {
+        //     myNumber = myNumber * myNumber;
+        //     txt = txt + myNumber + "<br>";
+        // }
+        // document.getElementById("demo").innerHTML = txt;
+
+        var myNumber = 32;
+        document.getElementById("demo").innerHTML =
+                "32 = " + "<br>" + 
+                " Decimal " + myNumber.toString(10) + "<br>" +
+                " Hexadecimal " + myNumber.toString(16) + "<br>" +
+                " Octal " + myNumber.toString(8) + "<br>" +
+                " Binary " + myNumber.toString(2);
+                
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       var car = "porsche"; //创建一个变量并赋值
+       var Car = {model: "porsche",price:39999,add:"中国"}//创建一个对象并赋值  (单行)
+       var Car = {                  (多行)
+        model: "porsche",
+        price:39999,
+        add:"中国"
+       }  
+
+       用new的方法创建对象
+       var Car = new Object();
+       Car.model = "porsche";
+       Car.price = 39999;
+       Car.add = "中国";
+
+
+
+       用构造器创建对象
+       function Car(model,price,add){
+            this.model = model;
+            this.price = price;
+            this.add = add;
+       }
+       创建Car对象
+       var car = new Car('porsche',39999,'中国');
+       访问属性；car.model//结果为porsche
+
+     -->
+
+     <!-- 
+                访问对象的属性的方法：
+        ex:   car.model 或 car["model"]
+
+
+        可以使用for in 访问属性
+        var txt = '';
+        var person = {fname:"Bill", lname:"Gates", age:62};
+        for (x in person) {
+            txt += person[x] + " ";
+            }   
+      -->
+      
+      
+      <!-- 
+
+        添加对象的属性
+        car.date = "2023";
+
+        删除对象的属性
+        delete car.price;
+
+        修改对象的属性
+        car.model = "大众";
+       -->
+
+       <h1>用 JSON 字符串创建对象</h1>
+
+       <p id="demo"></p>
+       
+       <script>
+       var text = '{"employees":[ {"firstName":"Bill","lastName":"Gates" },{"firstName":"Steve","lastName":"Jobs" }, {"firstName":"Elon","lastName":"Musk" }]}';
+       
+       var obj = JSON.parse(text);
+       document.getElementById("demo").innerHTML =
+       obj.employees[1].firstName + " " + obj.employees[1].lastName;
+       console.log(obj);
+       </script>
+</body>
+</html>

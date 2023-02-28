@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- 
-        数组排序,arr.sort(); 用于对数组的元素进行排序,并返回数组.
+        数组排序,arr.sort(); 用于对数组的元素进行排序,并返回数组.，改变原数组
         在没有参数的情况下,默认排序顺序是根据字符串Unicode码点。默认按照首字母A~Z a~z 0~9排序.
         函数传参,参数必须是函数. 
         arr.sort(function(a,b){return a-b});按照升序排序
@@ -18,6 +18,10 @@
         如果返回的时b-a,必须是负值,那么a大b小,也就是大的在前,小的在后,那不就是递减吗,仅仅是个人理解,方便记忆而已.
      -->    
 
+     <!-- 
+        找到数组中的最小值：可以先按从小到大排列后，第一个元素就是最小值
+        也可以用Math.min.apply(null,arr); 来获取数组中的最小值。这种用法要记住，apply方法改变了参数的形式，正常是这样的Math.min(33,45,21,1,545,....)参数不是数组
+      -->
     <h1>JavaScript 数组排序</h1>
 
     <p>单击按钮可按字母顺序或数字顺序对数组进行排序。</p>
@@ -44,7 +48,7 @@
  var arr = ['Google', 'apple', 'Microsoft'];
 
 function english(s1, s2) {
-    x1 = s1.toUpperCase();
+    x1 = s1.toUpperCase(); //先将小写字母统一转换为大写字母，然后再比较，也可以先转换为小写字母，toLowerCase
     x2 = s2.toUpperCase();
     if (x1 < x2) {
         return -1;
@@ -57,6 +61,8 @@ function english(s1, s2) {
 
 arr.sort(english); // ['apple', 'Google', 'Microsoft']
 console.log(arr);
+
+Math.min.apply()
     </script>
 </body>
 </html>

@@ -7,14 +7,24 @@
     <title>DomPrac</title>
 </head>
 <body>
-    <div>
+    <!-- <div>
         <ul id="myList">
             <li id="m1" name="boy">jj</li>
             <li id="m2" name="boy">gg</li>
             <li id="m3" name="boy">hh</li>
             <li id="m4" name="boy">kk</li>
         </ul>
-    </div>
+    </div> -->
+
+        <ul id="myList1"><li>Coffee</li><li>Tea</li></ul>
+        <ul id="myList2"><li>Water</li><li>Milk</li></ul>
+        
+        <p id="demo">请点击按钮把项目从一个列表移动到另一个列表中。</p>
+        
+        <button onclick="myFunction()">亲自试一试</button>
+
+     
+ 
     <script>
         // var elem = document.getElementById("myList");
         // console.log(elem);
@@ -30,6 +40,17 @@
     //    setTimeout(() => {
         
     //    }, timeout);
+
+    function myFunction()
+        {
+        //var node=document.getElementById("myList2").lastChild;
+        //document.getElementById("myList1").appendChild(node);
+         var tem =document.createElement("li");
+         tem.innerHTML = "tinajia";
+         tem.style.fontSize="24px";
+        document.getElementById("myList1").appendChild(tem);
+        
+        }
     </script>
 </body>
 </html>

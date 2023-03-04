@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 引入axios库，用来发送http请求
+const axios = require('axios');
+
+// 定义一个异步函数，用来获取网站的html内容
+async function getHtml(url) {
+  // 使用try...catch语句处理可能的错误
+  try {
+    // 使用await关键字等待http请求的结果
+    const response = await axios.get(url);
+    // 返回html内容
+    return response.data;
+  } catch (error) {
+    // 打印错误信息
+    console.error(error);
+  }
+}
+
+// 定义一个异步函数，用来解析html内容，并提取一些数据
+async function parseHtml(html) {
+  // 使用正则表达式匹配标题和链接
+  const regex = /<h3 class="title"><a href="(.*?)".*?>(.*?)<\/a><\/h3>/g;
+  // 定义一个数组，用来存储数据
+  const data = [];
+  // 使用循环遍历所有匹配结果
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    // 将标题和链接放入数组中
+    data.push({
+      title: match[2],
+      link: match[1]
+    });
+  }
+  // 返回数组
+  return data;
+}
+
+// 定义一个异步函数，用来打印数据
+async function printData(data) {
+  // 使用for...of语句遍历数组中的每个元素
+  for (const item of data) {
+    // 打印标题和链接
+    console.log(item.title);
+    console.log(item.link);
+    console.log();
+  }
+}
+
+// 定义一个异步函数，用来执行整个流程
+async function main() {
+  // 定义一个网址，这里以新浪科技为例
+  const url = 'https://tech.sina.com.cn/';
+  // 调用getHtml函数，获取html内容，并赋值给变量html
+  const html = await getHtml(url);
+  // 调用parseHtml函数，解析html内容，并提取数据，并赋值给变量data
+  const data = await parseHtml(html);
+  // 调用printData函数，打印数据到控制台上 
+   await printData(data);
+}
+
+// 调用main函数，开始执行程序  
+main();
+    </script>
+</body>
+</html>

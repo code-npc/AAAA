@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+                <!-- 成功-任务
+    promise承诺      
+                失败-任务 -->
+    <script>
+        // const promise = new Promise(function(resolve,reject){
+        // //    承诺达成
+        //     // resolve(100);
+        // // 承诺失败
+        //     reject(new Error('promise reject'));
+        // })
+
+        // promise.then(function(value){
+        //     console.log('resolve',value);
+        // },function(error){
+        //     console.log('reject',error);
+        // })
+
+
+
+        //封装一个请求ajax的异步请求
+
+        function ajax (url) { 
+            return new Promise(function(resolve,reject){//让返回的是一个异步请求
+                var xhr = new XMLHttpRequest();// 定义网络请求对象
+                xhr.open('GET',url);//设置请求的方式和url地址
+                xhr.responseType = 'json';//设置请求的类型为json
+                xhr.onload = function (){//注册一个onload事件
+                    if (this.status ===200){
+                        resolve(this.response);//请求成功
+                    }else{
+                        reject(new Error(this.statusText));//请求失败，打印状态文本
+                    }
+                }
+                xhr.send();//开始执行异步请求
+            })
+        }
+
+    //   ajax('./api/users.json').then(function(resolve){
+    //     console.log(resolve);
+    //   },function(error){
+    //     console.log(error);
+    //   })
+
+
+      //链式调用，代码扁平化
+    //  promise对象的then方法会返回一个全新的Promise对象
+    // 后面的then方法就是在为上一个then返回的promise注册回调
+    // 前面then方法中回调函数的返回值会作为后面then方法回调的参数
+    // 如果回调中返回的是promise，那后面then方法的回调会等待它的结束
+
+      ajax("./api/users.json")
+      .then(function(resolve){
+        console.log(111)
+        return ajax('./api/users.json')
+      })
+      .then(function(resolve){
+        console.log(2222)
+        console.log(resolve)
+        return ajax('./api/users.json')
+      })
+      .then(function(value){
+        console.log(3333);
+        console.log(value)
+      })
+      .then(function(value){
+        console.log(444)
+        return "foo"
+      })
+      .then(function(value){
+        console.log(value);
+      })
+
+
+      
+    //   并行执行
+    // ajax('./api/users.json');
+    // ajax('./api/users.json')
+    var promise = Promise.all([  //promise.race() 根据第一个结束的promise为准。
+    ajax('./api/users.json'),
+    ajax('./api/users.json')
+    ])//当两种请求全部都成功完成后，返回一个promise对象，有一个不完成就算失败
+    promise.then(function(values){
+        cosole.log(values);
+    }).catch(function(err){
+        console.log(err);
+    })
+    </script>
+</body>
+</html>

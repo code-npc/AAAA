@@ -2,9 +2,9 @@
 import cv2
 import matplotlib.pyplot as plt
 # 加载图片
-img1 = cv2.imread('t1.jpg',0)         
+img1 = cv2.imread('01.jpg',0)
 # img3是和img1一样的照片
-img3 = cv2.imread('t2.jpg',0)
+img3 = cv2.imread('02.jpg',0)
 # 对这张照片进行高斯模糊
 blurred = cv2.GaussianBlur(img3, (9, 9), 0)
 # 再旋转

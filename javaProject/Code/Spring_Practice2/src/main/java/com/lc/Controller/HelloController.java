@@ -1,2 +1,13 @@
-package com.lc.Controller;public class HelloController {
+package com.lc.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+    @RequestMapping("/hello")
+    public String hello(){
+        System.out.println("hello Controller");
+        return "hello Controller";
+    }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring_Practice2" />
+        <module name="Spring_Practice1" />
+        <module name="Mybatis-quickstart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Mybatis-quickstart" options="-parameters" />
+      <module name="Spring_Practice1" options="-parameters" />
+      <module name="Spring_Practice2" options="-parameters" />
+    </option>
+  </component>
+</project>

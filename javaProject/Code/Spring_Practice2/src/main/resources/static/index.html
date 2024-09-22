@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!--    <script src="./js/vue.js"></script>-->
+<!--    <script src="./js/axios.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
 </head>
 <body>
-$END$
+
+
+<div id="app" >
+<!--    <table >-->
+<!--        <th>信息表</th>-->
+<!--        <tr>-->
+<!--            <td>编号</td>-->
+<!--            <td>姓名</td>-->
+<!--            <td>年龄</td>-->
+<!--            <td>性别</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>姓名</td>-->
+<!--            <td>姓名</td>-->
+<!--            <td>年龄</td>-->
+<!--            <td>性别</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+</div>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            dataList:[]
+        },
+        mounted(){
+            // axios.get('/getList').then(result =>{
+            //     alert("111")
+            //     // if (result.data.code){
+            //     //     // this.dataList = result.data.data;
+            //     //     alert(result)
+            //     // }
+            // })
+
+            axios.get('/getList').then(res =>{
+                console.log(res);
+            })
+
+        }
+    })
+</script>
+
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<!--    <script src="./js/vue.js"></script>-->
+    <script src="./js/axios.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+</head>
+<body>
+
+
+<div id="app" >
+<!--    <table >-->
+<!--        <th>信息表</th>-->
+<!--        <tr>-->
+<!--            <td>编号</td>-->
+<!--            <td>姓名</td>-->
+<!--            <td>年龄</td>-->
+<!--            <td>性别</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>姓名</td>-->
+<!--            <td>姓名</td>-->
+<!--            <td>年龄</td>-->
+<!--            <td>性别</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+</div>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            dataList:[]
+        },
+        mounted(){
+            // axios.get('/getList').then(result =>{
+            //     alert("111")
+            //     // if (result.data.code){
+            //     //     // this.dataList = result.data.data;
+            //     //     alert(result)
+            //     // }
+            // })
+
+            axios.post('/getList')
+                .catch(function (error) {
+                    if (error.response) {
+                        // 请求成功发出且服务器也响应了状态码，但状态代码超出了 2xx 的范围
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        // 请求已经成功发起，但没有收到响应
+                        // `error.request` 在浏览器中是 XMLHttpRequest 的实例，
+                        // 而在node.js中是 http.ClientRequest 的实例
+                        console.log(error.request);
+                    } else {
+                        // 发送请求时出了点问题
+                        console.log('Error', error.message);
+                    }
+                    console.log(error.config);
+                });
+        }
+    })
+</script>
+
+</body>
+</html>

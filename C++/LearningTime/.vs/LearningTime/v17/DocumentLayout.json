@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\AAAAAAAA\\C\u002B\u002B\\LearningTime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35CA7BC0-B1A5-4BF5-A222-1A0528CD5EE5}|LearningTime\\LearningTime.vcxproj|D:\\AAAAAAAA\\C\u002B\u002B\\LearningTime\\LearningTime\\test01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35CA7BC0-B1A5-4BF5-A222-1A0528CD5EE5}|LearningTime\\LearningTime.vcxproj|solutionrelative:LearningTime\\test01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\AAAAAAAA\\C\u002B\u002B\\LearningTime\\LearningTime\\test01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LearningTime\\test01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,7 +24,7 @@
               "RelativeDocumentMoniker": "LearningTime\\test01.cpp",
               "ToolTip": "D:\\AAAAAAAA\\C\u002B\u002B\\LearningTime\\LearningTime\\test01.cpp",
               "RelativeToolTip": "LearningTime\\test01.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-20T08:36:36.694Z",
               "EditorCaption": ""

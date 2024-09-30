@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
 
+from PIL import Image
+import os
+
 def lbp_calculation(image):
     # 获取图像的尺寸
     height, width = image.shape
@@ -30,15 +33,33 @@ def lbp_calculation(image):
 
 def main():
     # 读取图像并转换为灰度图
-    image = cv2.imread('D:/Develop/0.bmp')  # 替换为你的图像路径
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    path_to_directory = 'D:/getFeature/orl400/'
+    os.chdir(path_to_directory)
+    print("更改后的工作目录：", os.getcwd())
+    # 列出当前目录下的所有文件和文件夹
+    entries = os.listdir('.')
+    print("当前目录中的文件和文件夹：", entries)
+    # image_url = 'D:/Develop/rallgray/' + entries[6]
+    # int num = 0
+    for file in entries:
+        image_url = path_to_directory + file
+        image = cv2.imread(image_url)  # 替换为你的图像路径
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    # 计算 LBP 特征图
-    lbp_image = lbp_calculation(gray_image)
+        # 计算 LBP 特征图
+        lbp_image = lbp_calculation(gray_image)
 
     # 显示原图和 LBP 特征图
-    cv2.imshow('Original Image', gray_image)
-    cv2.imshow('LBP Image', lbp_image)
+    # cv2.imshow('Original Image', gray_image)
+    # cv2.imshow('LBP Image', lbp_image)
+
+        output_folder = 'D:/getFeature/LBP_feature_image'
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+
+        output_file = os.path.join(output_folder, f'lbp_{file}')
+        cv2.imwrite(output_file, lbp_image)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
